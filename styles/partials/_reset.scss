@@ -1,3 +1,4 @@
+/* En este apartado hice un reset personalizado donde defino propiedades generales a cumplir en todo el sitio. Basicamente estilos estandares para el sitio. */
 /* RESET */
 * {
     margin: 0;
@@ -11,7 +12,7 @@ html{
     scroll-padding-top: 100px;
 }
 
-body, input{
+body, input, textarea{
     font-family: $fuenteTexto;
     color: $colorNegroEsMarina;
 }
@@ -45,6 +46,7 @@ img {
 }
 
 button {
+    /* Aqui lo que estoy haciendo es eliminar todos los estilos de los botones para que se vea como texto comun, principalmente para asegurar que al estilar el boton se mantengan siempre los estilos que configure */
     background: none;
 	color: inherit;
 	border: none;
@@ -53,6 +55,7 @@ button {
 	cursor: pointer;
 	outline: inherit;
 
+    /* Estilos personalizados de botones, normalemente estilaria los botones en el archivo de variables para tener distintos tipos de botones sean primarios o secundarios, pero como en el sitio solo hay un boton agregue el estilado aqui mismo */
     @extend %scaleEffect;
     margin: 0;
     padding: 0.5rem 1.5rem;
@@ -62,11 +65,11 @@ button {
 }
 
 input, textarea {
-    padding: 0.4rem;
+    padding: 0.5rem;
     border: solid $colorTurquesaEsMarina 1px;
     outline: none;
-    color: $colorNegroEsMarina;
 
+    /* Basicamente aqui estoy haciendo un outline personalizado */
     &:focus {
         border: solid $colorTurquesaEsMarina 2px;
     }

@@ -1,3 +1,4 @@
+/* Este pixel lo uso para poder detectar la altura a la que se encuetra el viewport del dispositivo. Es un trigger para que al dejar de estar en pantalla se modifiquen los estilos del navbar */
 /* PIXEL SENSOR DE SCROLL */
 #top-del-sitio-pixel-sensor {
     position: absolute;
@@ -11,9 +12,9 @@
 
 /* HEADER */
 .header {
-    position: relative;
     width: 100%;
     padding-top: $sizeImagenHero;
+    position: relative;
     display: flex;
     justify-content: center;
     
@@ -26,14 +27,14 @@
         top: 0;
         
         .header-hero {
+            top: 0;
+            width: 100%;
+            height: 100%;
             background-image: $imagenHero;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;

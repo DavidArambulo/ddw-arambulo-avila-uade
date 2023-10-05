@@ -1,3 +1,5 @@
+/* Utilice SASS, principalmente por orden y comodidad a la hora de aplicar estilos */
+/* Aqui agregue multiples estilos a reutilizar y que quiero mantener unificados para todo el sitio. */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,400;0,6..12,700;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,400;1,6..12,700;1,6..12,900;1,6..12,1000&display=swap");
 @keyframes slideIn {
   0% {
@@ -23,6 +25,7 @@
   max-width: 1200px;
 }
 
+/* En este apartado hice un reset personalizado donde defino propiedades generales a cumplir en todo el sitio. Basicamente estilos estandares para el sitio. */
 /* RESET */
 * {
   margin: 0;
@@ -36,7 +39,7 @@ html {
   scroll-padding-top: 100px;
 }
 
-body, input {
+body, input, textarea {
   font-family: "Nunito Sans", sans-serif;
   color: #101419;
 }
@@ -71,6 +74,7 @@ img {
 }
 
 button {
+  /* Aqui lo que estoy haciendo es eliminar todos los estilos de los botones para que se vea como texto comun, principalmente para asegurar que al estilar el boton se mantengan siempre los estilos que configure */
   background: none;
   color: inherit;
   border: none;
@@ -78,6 +82,7 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+  /* Estilos personalizados de botones, normalemente estilaria los botones en el archivo de variables para tener distintos tipos de botones sean primarios o secundarios, pero como en el sitio solo hay un boton agregue el estilado aqui mismo */
   margin: 0;
   padding: 0.5rem 1.5rem;
   background-color: #00B0B0;
@@ -86,10 +91,10 @@ button {
 }
 
 input, textarea {
-  padding: 0.4rem;
+  padding: 0.5rem;
   border: solid #00B0B0 1px;
   outline: none;
-  color: #101419;
+  /* Basicamente aqui estoy haciendo un outline personalizado */
 }
 input:focus, textarea:focus {
   border: solid #00B0B0 2px;
@@ -131,6 +136,7 @@ strong {
 }
 
 /* FIN RESET */
+/* Use estos estilos que saque de internet para lograr no tener que estilar desde 0 el icono de hamburguesa para el menu del navbar en mobile. Modifique algunas cosas relacionadas al los tamanios de las lineas y los ajustes para que el icono de "Close" se viera correctamente con los nuevos tamanios de linea. */
 /* Inicio nav-menu-btn */
 .hamburger .line {
   width: 25px;
@@ -164,6 +170,7 @@ Original Version Made By: Rosa https://codepen.io/RRoberts/
 Found on: https://freefrontend.com/css-hamburger-menu-icons/
 */
 /* Fin nav-menu-btn */
+/* Este pixel lo uso para poder detectar la altura a la que se encuetra el viewport del dispositivo. Es un trigger para que al dejar de estar en pantalla se modifiquen los estilos del navbar */
 /* PIXEL SENSOR DE SCROLL */
 #top-del-sitio-pixel-sensor {
   position: absolute;
@@ -177,9 +184,9 @@ Found on: https://freefrontend.com/css-hamburger-menu-icons/
 /* FIN PIXEL SENSOR DE SCROLL */
 /* HEADER */
 .header {
-  position: relative;
   width: 100%;
   padding-top: 450px;
+  position: relative;
   display: flex;
   justify-content: center;
 }
@@ -191,14 +198,14 @@ Found on: https://freefrontend.com/css-hamburger-menu-icons/
   top: 0;
 }
 .header .header-hero-wrapper .header-hero {
+  top: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("../images/hero-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
