@@ -1,0 +1,59 @@
+// COLORES
+$colorBlancoEsMarina: #fff;
+$colorNegroEsMarina: #101419;
+$colorTurquesaEsMarina: #00B0B0;
+$colorLadrilloEsMarina: #984447;
+
+
+// IMAGENES
+$imagenHero: url('../images/hero-desktop.jpg');
+
+
+// TAMANIOS
+$sizeImagenHero: 450px;
+
+// FUENTES
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,400;0,6..12,700;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,400;1,6..12,700;1,6..12,900;1,6..12,1000&display=swap');
+$fuenteTexto: 'Nunito Sans', sans-serif;
+
+// SOMBRAS
+$sombraProductos: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+
+// ANIMACIONES
+@keyframes slideIn {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+%scaleEffect {
+    transition: transform .1s ease-in-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &:active {
+        transform: scale(.95);
+    }
+}
+
+// UTILES
+%contenedor {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+@mixin galeria ($columnGap: 0, $rowGap: 0) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: $columnGap;
+
+    @if $rowGap != 0 {
+        row-gap: $rowGap;
+    }
+}

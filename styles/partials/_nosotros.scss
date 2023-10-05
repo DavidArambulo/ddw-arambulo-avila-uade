@@ -1,0 +1,45 @@
+/* SECCION NOSOTROS */
+#nosotros {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    
+    img {
+        margin: auto;
+    }
+    
+    .nosotros-texto {
+        
+        p + p {
+            margin-top: 1rem;
+        }
+    }
+    
+    .nosotros-imagen-completa {
+        display: none;
+        
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+            display: block;
+        }
+    }
+    .nosotros-imagen-chica {
+        display: block;
+        
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+            display: none;
+        }
+    }
+    
+    @media only screen and (min-width: 576px) {
+        flex-direction: row;
+        gap: 5%;
+        
+        img {
+            width: 45%;
+            max-width: 450px;
+        }
+    }
+}
+/* FIN SECCION NOSOTROS */

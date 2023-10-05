@@ -1,0 +1,116 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+    scroll-padding-top: 100px;
+}
+
+body, input{
+    font-family: $fuenteTexto;
+    color: $colorNegroEsMarina;
+}
+
+html, body {
+    max-width: 100%;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2, h3, h4 {
+    color: $colorLadrilloEsMarina;
+    text-decoration: underline $colorTurquesaEsMarina;
+}
+
+h3, h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+    @extend %scaleEffect;
+    margin: 0;
+    padding: 0.5rem 1.5rem;
+    background-color: $colorTurquesaEsMarina;
+    color: $colorBlancoEsMarina;
+    font-weight: 700;
+}
+
+input, textarea {
+    padding: 0.4rem;
+    border: solid $colorTurquesaEsMarina 1px;
+    outline: none;
+    color: $colorNegroEsMarina;
+
+    &:focus {
+        border: solid $colorTurquesaEsMarina 2px;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    a {
+        text-decoration: underline;
+        color: $colorLadrilloEsMarina;
+        
+        &:visited {
+            color: inherit;
+        }
+        &:hover {
+            color: $colorTurquesaEsMarina;
+        }
+        &:active {
+            color: inherit;
+        }
+    }
+}
+
+ul li {
+    list-style: none;
+}
+
+strong {
+    color: $colorLadrilloEsMarina;
+}
+
+section {
+    @extend %contenedor;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.color-ladrillo {
+    color: $colorLadrilloEsMarina;
+}
+/* FIN RESET */

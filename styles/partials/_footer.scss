@@ -1,0 +1,84 @@
+/* FOOTER */
+.footer {
+    margin-top: 5rem;
+    padding: 3rem 0 1rem;
+    border-top: solid $colorTurquesaEsMarina 5px;
+    background-color: $colorNegroEsMarina;
+    color: $colorBlancoEsMarina;
+    
+    img {
+        width: 100%;
+    }
+    
+    .footer-contenedor {
+        @extend %contenedor;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        
+        .footer-copy {
+            font-size: 0.8rem;
+            font-weight: 200;
+        }
+        .footer-nav {
+            @include galeria(2rem, 2rem);
+            flex-direction: column;
+            align-items: center;
+            
+            .footer-logo, .redes-link {
+                @extend %scaleEffect;
+            }
+            .footer-logo {
+                width: 8rem;
+            }
+            .footer-nav-redes {
+                @include galeria(1.5rem, 1.5rem);
+                
+                .redes-link {
+                    width: 2.5rem;
+                }
+            }
+            .footer-nav-contacto {
+                text-align: center;
+
+                .contacto-item + .contacto-item {
+                    margin-top: 0.2rem;
+                }
+
+                .contacto-item {
+                    a {
+                        &:hover {
+                            color: $colorTurquesaEsMarina;
+                        }
+                        &:active {
+                            color: $colorLadrilloEsMarina;
+                        }
+                    }
+                }
+            }
+            
+            @media only screen and (min-width: 768px) {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                
+                
+                .footer-logo {
+                    width: 10rem;
+                }
+                .footer-nav-contacto {
+                    text-align: right;
+                }
+                .footer-nav-redes {
+                    gap: 3rem;
+                    
+                    .redes-link {
+                        width: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+/* FIN FOOTER */
