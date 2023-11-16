@@ -246,7 +246,7 @@ const loadProducts = (productos) => {
             <div id="acciones-${producto.id}">
                 <button id="btn-agregar-${producto.id}">Agregar al carrito</button>
                 <button id="btn-restar-${producto.id}" class="disable">-</button>
-                <input type="number" id="input-manual-${producto.id}" class="disable">
+                <input type="number" id="input-manual-${producto.id}" min="0" class="disable">
                 <button id="btn-sumar-${producto.id}" class="disable">+</button>
             </div>
         </li>`
