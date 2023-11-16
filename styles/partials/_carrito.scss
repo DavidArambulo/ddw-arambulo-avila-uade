@@ -1,0 +1,97 @@
+#carrito {
+    margin-top: 3rem;
+    
+    .total-carrito {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding-top: 1rem;
+        border-top: solid 1px $colorTurquesaEsMarina;
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        justify-content: space-between;
+
+        #vaciar-carrito {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+            font-size: 0.8rem;
+            text-align: left;
+            text-decoration: underline;
+        }
+
+        @media only screen and (min-width: 576px) {
+            flex-direction: row;
+            #vaciar-carrito {
+                text-align: right;
+            }
+        }
+    }
+
+    #carrito-productos {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .producto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: $sombraProductos;
+            padding: 1rem;
+            
+            .producto-imagen, .producto-info, [id^=carrito-acciones-], [id^=total-producto-] {
+                width: 100%;
+            }
+            [id^=carrito-acciones-] {
+                display: flex;
+                
+
+                input {
+                    width: 60px;
+                }
+                [id^=carrito-btn-eliminar-] {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+            }
+            [id^=total-producto-] {
+                font-size: 1.25rem;
+            }
+
+            @media only screen and (min-width: 576px) {
+                display: grid;
+                grid-template-columns: 125px 2fr 1fr;
+                grid-template-rows: auto auto;
+                grid-template-areas: 
+                'img info total'
+                'img acciones acciones';
+
+                .producto-imagen {
+                    grid-area: img;
+                    max-width: 250px;
+                }
+                .producto-info {
+                    grid-area: info;
+                    align-self: flex-start;
+                }
+                [id^=carrito-acciones-] {
+                    grid-area: acciones;
+                    align-self: flex-end;
+                }
+                [id^=total-producto-] {
+                    grid-area: total;
+                    align-self: flex-start;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

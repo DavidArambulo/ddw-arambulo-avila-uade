@@ -46,6 +46,10 @@
                     <li class="nav-links-link"><a href="#productos" class="link">Productos</a></li>
                     <li class="nav-links-link"><a href="#contacto" class="link">Contacto</a></li>
                 </ul>
+                <a id="link-carrito" href="#carrito" class="icono-carrito" title="Carrito">
+                    <img src="images/carro-de-la-compra.png" alt="Carrito">
+                    <span id="cantidad-carrito" class="disable"></span>
+                </a>
             </nav>
         </div>
         
@@ -98,77 +102,23 @@
     </section>
     <section id="productos">
         <h2>Productos</h2>
-        <ul class="productos-galeria">
-            <li class="producto">
-                <a href="#" class="producto-link">
-                    <img class="producto-imagen" src="images/productos/producto0.jpg" alt="Vasija selva tropical">
-                    <h3>Vasija selva tropical</h3>
-                    <ul class="producto-info">
-                        <li>N° piezas: 6</li>
-                        <li>$</li>
-                    </ul>
-                </a>
-            </li>
-            <li class="producto">
-                <a href="#" class="producto-link">
-                    <img class="producto-imagen" src="images/productos/producto1.jpg" alt="Vasija costa caribeña">
-                    <h3>Vasija costa caribeña</h3>
-                    <ul class="producto-info">
-                        <li>N° piezas: 5</li>
-                        <li>$</li>
-                    </ul>
-                </a>
-            </li>
-            <li class="producto">
-                <a href="#" class="producto-link">
-                    <img class="producto-imagen" src="images/productos/producto2.jpg" alt="Bowl caracol">
-                    <h3>Bowl caracol</h3>
-                    <ul class="producto-info">
-                        <li>N° piezas: 1</li>
-                        <li>$</li>
-                    </ul>
-                </a>
-            </li>
-            <li class="producto">
-                <a href="#" class="producto-link">
-                    <img class="producto-imagen" src="images/productos/producto3.jpg" alt="Macetas tronco de palmera">
-                    <h3>Maceta tronco de palmera</h3>
-                    <ul class="producto-info">
-                        <li>N° piezas: 1</li>
-                        <li>$</li>
-                    </ul>
-                </a>
-            </li>
-            <li class="producto">
-                <a href="#" class="producto-link">
-                    <img class="producto-imagen" src="images/productos/producto4.jpg" alt="Jarron coco">
-                    <h3>Jarron coco</h3>
-                    <ul class="producto-info">
-                        <li>N° piezas: 1</li>
-                        <li>$</li>
-                    </ul>
-                </a>
-            </li>
-            <li class="producto">
-                <a href="#" class="producto-link">
-                    <img class="producto-imagen" src="images/productos/producto5.jpg" alt="Maceta Tiki">
-                    <h3>Maceta Tiki</h3>
-                    <ul class="producto-info">
-                        <li>N° piezas: 1</li>
-                        <li>$</li>
-                    </ul>
-                </a>
-            </li>
-        </ul>
+        <ul id="galeria-productos" class="productos-galeria"></ul>
+    </section>
+    <section id="carrito">
+        <h2>Carrito</h2>
+        <ul id="carrito-productos"></ul>
+        <p class="total-carrito"><strong>Total Carrito: $<span id="total-carrito"></span></strong><button id="vaciar-carrito">Vaciar carrito</button></p>
+        <button id="comprar">Comprar</button>
     </section>
     <section id="contacto">
         <h2>Contacto</h2>
         <div class="contacto-info">
             <form class="contacto-form">
-                <input type="text" placeholder="Nombre" maxlength="25">
-                <input type="email" placeholder="Correo Electrónico" maxlength="50">
-                <textarea cols="30" rows="10" placeholder="Consulta" maxlength="250"></textarea>
+                <input name="nombre" type="text" placeholder="Nombre" maxlength="25" required>
+                <input name="correo" type="email" placeholder="Correo Electrónico" maxlength="50" required>
+                <textarea name="consulta" cols="30" rows="10" placeholder="Consulta" maxlength="250" required></textarea>
                 <button type="submit">Enviar</button>
+                <a id="mailto-pixel" href="mailto:hola@esmarina.com"></a>
             </form>
             <div class="contacto-mapa">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1641.7443596153855!2d-58.38311252705777!3d-34.61708808214981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaba6ac89b35%3A0x1a2dc24cbca665a7!2sUADE!5e0!3m2!1ses-419!2sar!4v1696402813566!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

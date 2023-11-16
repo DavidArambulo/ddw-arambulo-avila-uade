@@ -1,0 +1,44 @@
+[
+    {
+        "id": "0",
+        "imagenRef": "images/productos/producto0.jpg",
+        "nombre": "Vasija selva tropical",
+        "piezas": 6,
+        "precio": 100
+    },
+    {
+        "id": "1",
+        "imagenRef": "images/productos/producto1.jpg",
+        "nombre": "Vasija costa caribeña",
+        "piezas": 5,
+        "precio": 100
+    },
+    {
+        "id": "2",
+        "imagenRef": "images/productos/producto2.jpg",
+        "nombre": "Bowl caracol",
+        "piezas": 1,
+        "precio": 100
+    },
+    {
+        "id": "3",
+        "imagenRef": "images/productos/producto3.jpg",
+        "nombre": "Maceta tronco de palmera",
+        "piezas": 1,
+        "precio": 100
+    },
+    {
+        "id": "4",
+        "imagenRef": "images/productos/producto4.jpg",
+        "nombre": "Jarron coco",
+        "piezas": 1,
+        "precio": 100
+    },
+    {
+        "id": "5",
+        "imagenRef": "images/productos/producto5.jpg",
+        "nombre": "Maceta Tiki",
+        "piezas": 1,
+        "precio": 100
+    }
+]

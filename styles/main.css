@@ -9,13 +9,13 @@
     top: 0;
   }
 }
-.footer .footer-contenedor .footer-nav .footer-logo, .footer .footer-contenedor .footer-nav .redes-link, #productos .productos-galeria .producto .producto-link, .header .header-navbar .navbar-nav .nav-links .nav-links-link, button {
+.footer .footer-contenedor .footer-nav .footer-logo, .footer .footer-contenedor .footer-nav .redes-link, .header .header-navbar .navbar-nav .nav-links .nav-links-link, .header .header-navbar .navbar-nav .icono-carrito, button {
   transition: transform 0.1s ease-in-out;
 }
-.footer .footer-contenedor .footer-nav .footer-logo:hover, .footer .footer-contenedor .footer-nav .redes-link:hover, #productos .productos-galeria .producto .producto-link:hover, .header .header-navbar .navbar-nav .nav-links .nav-links-link:hover, button:hover {
+.footer .footer-contenedor .footer-nav .footer-logo:hover, .footer .footer-contenedor .footer-nav .redes-link:hover, .header .header-navbar .navbar-nav .nav-links .nav-links-link:hover, .header .header-navbar .navbar-nav .icono-carrito:hover, button:hover {
   transform: scale(1.05);
 }
-.footer .footer-contenedor .footer-nav .footer-logo:active, .footer .footer-contenedor .footer-nav .redes-link:active, #productos .productos-galeria .producto .producto-link:active, .header .header-navbar .navbar-nav .nav-links .nav-links-link:active, button:active {
+.footer .footer-contenedor .footer-nav .footer-logo:active, .footer .footer-contenedor .footer-nav .redes-link:active, .header .header-navbar .navbar-nav .nav-links .nav-links-link:active, .header .header-navbar .navbar-nav .icono-carrito:active, button:active {
   transform: scale(0.95);
 }
 
@@ -135,6 +135,10 @@ strong {
   color: #984447;
 }
 
+.disable {
+  display: none;
+}
+
 /* FIN RESET */
 /* Use estos estilos que saque de internet para lograr no tener que estilar desde 0 el icono de hamburguesa para el menu del navbar en mobile. Modifique algunas cosas relacionadas al los tamanios de las lineas y los ajustes para que el icono de "Close" se viera correctamente con los nuevos tamanios de linea. */
 /* Inicio nav-menu-btn */
@@ -244,6 +248,19 @@ Found on: https://freefrontend.com/css-hamburger-menu-icons/
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header .header-navbar .navbar-nav .icono-carrito {
+  width: 28px;
+  position: relative;
+}
+.header .header-navbar .navbar-nav .icono-carrito #cantidad-carrito {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #984447;
+  padding: 3px;
+  border-radius: 40%;
+  font-size: 0.8rem;
 }
 .header .header-navbar .navbar-nav .nav-logo {
   width: 4rem;
@@ -385,24 +402,50 @@ Found on: https://freefrontend.com/css-hamburger-menu-icons/
 }
 #productos .productos-galeria .producto {
   width: 100%;
-}
-#productos .productos-galeria .producto .producto-link {
-  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-#productos .productos-galeria .producto .producto-link h3 {
+#productos .productos-galeria .producto .producto-imagen {
+  display: inline-block;
+  width: 100%;
+}
+#productos .productos-galeria .producto button {
+  transform: none;
+}
+#productos .productos-galeria .producto h3 {
   padding: 1rem 1rem 0 1rem;
 }
-#productos .productos-galeria .producto .producto-link .producto-info {
+#productos .productos-galeria .producto .producto-info {
   padding: 0 1rem 1rem 1rem;
   margin-top: auto;
   margin-bottom: 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+#productos .productos-galeria .producto [id^=acciones] {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  -moz-column-gap: 0;
+       column-gap: 0;
+}
+#productos .productos-galeria .producto [id^=acciones] [id^=btn-agregar] {
+  width: 100%;
+}
+#productos .productos-galeria .producto [id^=acciones] [id^=btn-sumar], #productos .productos-galeria .producto [id^=acciones] [id^=btn-restar] {
+  width: 58px;
+}
+#productos .productos-galeria .producto [id^=acciones] [id^=input-manual] {
+  width: 80px;
+  text-align: center;
+  border: 0;
+}
+#productos .productos-galeria .producto [id^=acciones] [id^=input-manual]:focus {
+  border: 0;
 }
 @media only screen and (min-width: 576px) {
   #productos .productos-galeria {
@@ -424,6 +467,96 @@ Found on: https://freefrontend.com/css-hamburger-menu-icons/
 }
 
 /* FIN SECCION PRODUCTOS */
+#carrito {
+  margin-top: 3rem;
+}
+#carrito .total-carrito {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: solid 1px #00B0B0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#carrito .total-carrito #vaciar-carrito {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 0.8rem;
+  text-align: left;
+  text-decoration: underline;
+}
+@media only screen and (min-width: 576px) {
+  #carrito .total-carrito {
+    flex-direction: row;
+  }
+  #carrito .total-carrito #vaciar-carrito {
+    text-align: right;
+  }
+}
+#carrito #carrito-productos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#carrito #carrito-productos .producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 1rem;
+}
+#carrito #carrito-productos .producto .producto-imagen, #carrito #carrito-productos .producto .producto-info, #carrito #carrito-productos .producto [id^=carrito-acciones-], #carrito #carrito-productos .producto [id^=total-producto-] {
+  width: 100%;
+}
+#carrito #carrito-productos .producto [id^=carrito-acciones-] {
+  display: flex;
+}
+#carrito #carrito-productos .producto [id^=carrito-acciones-] input {
+  width: 60px;
+}
+#carrito #carrito-productos .producto [id^=carrito-acciones-] [id^=carrito-btn-eliminar-] {
+  margin-left: auto;
+  margin-right: 0;
+}
+#carrito #carrito-productos .producto [id^=total-producto-] {
+  font-size: 1.25rem;
+}
+@media only screen and (min-width: 576px) {
+  #carrito #carrito-productos .producto {
+    display: grid;
+    grid-template-columns: 125px 2fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "img info total" "img acciones acciones";
+  }
+  #carrito #carrito-productos .producto .producto-imagen {
+    grid-area: img;
+    max-width: 250px;
+  }
+  #carrito #carrito-productos .producto .producto-info {
+    grid-area: info;
+    align-self: flex-start;
+  }
+  #carrito #carrito-productos .producto [id^=carrito-acciones-] {
+    grid-area: acciones;
+    align-self: flex-end;
+  }
+  #carrito #carrito-productos .producto [id^=total-producto-] {
+    grid-area: total;
+    align-self: flex-start;
+    text-align: right;
+  }
+}
+
 /* CONTACTO */
 #contacto {
   margin-top: 3rem;
